@@ -35,9 +35,12 @@ class TasksViewController: UIViewController, UITableViewDataSource, UITableViewD
         let cell = UITableViewCell()
         //cell implementation
         if tasks[indexPath.row].priority {
-            tasks[indexPath.row].taskName += tasks[indexPath.row].exclamation
+            cell.textLabel?.text = "\(tasks[indexPath.row].taskName)❗️"
         }
-        cell.textLabel?.text = tasks[indexPath.row].taskName
+        else {
+            cell.textLabel?.text = tasks[indexPath.row].taskName
+        }
+        
         
         return cell
     }
