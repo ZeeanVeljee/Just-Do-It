@@ -12,5 +12,5 @@ class Task {
     
     var taskName = ""
     var priority = false
-    var exclamation = "!"
+    var exclamation = "❗️"
 }
