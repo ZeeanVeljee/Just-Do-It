@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -45,6 +46,7 @@
                     <connections>
                         <outlet property="taskTableView" destination="tsJ-Wg-xQr" id="GBE-v3-guC"/>
                         <segue destination="sx6-JB-Zaf" kind="show" identifier="createTask" id="uSY-VU-G5Y"/>
+                        <segue destination="kA0-U5-eAG" kind="show" identifier="selectTaskSegue" id="9Xr-Ng-Hfm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -116,6 +118,51 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wpf-WY-gcZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1850" y="38"/>
+        </scene>
+        <!--Complete Task View Controller-->
+        <scene sceneID="nh5-He-GbS">
+            <objects>
+                <viewController id="kA0-U5-eAG" customClass="CompleteTaskViewController" customModule="Just_Do_It" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="D3I-Yp-W7K"/>
+                        <viewControllerLayoutGuide type="bottom" id="INB-OG-Z0s"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gh8-Wb-Ud1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YkT-5K-q65">
+                                <rect key="frame" x="50" y="114" width="275" height="27.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HCL-sy-QQ7">
+                                <rect key="frame" x="142" y="176.5" width="90" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Complete"/>
+                                <connections>
+                                    <action selector="completeTask:" destination="kA0-U5-eAG" eventType="touchUpInside" id="hrz-TI-sih"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="YkT-5K-q65" firstAttribute="top" secondItem="D3I-Yp-W7K" secondAttribute="bottom" constant="50" id="O6R-3G-Sl1"/>
+                            <constraint firstItem="HCL-sy-QQ7" firstAttribute="top" secondItem="YkT-5K-q65" secondAttribute="bottom" constant="35" id="aqr-zM-i5L"/>
+                            <constraint firstAttribute="trailing" secondItem="YkT-5K-q65" secondAttribute="trailing" constant="50" id="gb3-mI-6c3"/>
+                            <constraint firstItem="YkT-5K-q65" firstAttribute="leading" secondItem="gh8-Wb-Ud1" secondAttribute="leading" constant="50" id="i9O-nK-0rd"/>
+                            <constraint firstItem="HCL-sy-QQ7" firstAttribute="leading" secondItem="gh8-Wb-Ud1" secondAttribute="leadingMargin" constant="126" id="r2O-LN-ERr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="HCL-sy-QQ7" secondAttribute="trailing" constant="127" id="wU3-Fd-doj"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="taskLabel" destination="YkT-5K-q65" id="cvH-bW-0IE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bSt-PS-N6h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1800.8" y="741.67916041979015"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ked-ht-xFj">
